@@ -1,0 +1,19 @@
+{
+    "name": "digo-tslint",
+    "version": "0.0.1",
+    "repository": "http://github.com/digojs/digo-clean-css",
+    "description": "digo 插件：使用 TSLint 检测 TypeScript 代码",
+    "keywords": [
+        "digo-plugin",
+        "minify css",
+        "compress css"
+    ],
+    "license": "MIT",
+    "author": "xuld <xuld@vip.qq.com>",
+    "dependencies": {
+        "tslint": "latest"
+    },
+    "files": [
+        "index.js"
+    ]
+}
