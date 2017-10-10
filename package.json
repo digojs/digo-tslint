@@ -1,6 +1,6 @@
 {
     "name": "digo-tslint",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "repository": "http://github.com/digojs/digo-tslint",
     "description": "digo 插件：使用 TSLint 检查 TypeScript 代码",
     "keywords": [
