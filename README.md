@@ -15,7 +15,7 @@ digo.src("*.ts", "*.tsx").pipe("digo-tslint");
 ## 选项
 ```js
 digo.src("*.ts", "*.tsx").pipe("digo-tslint", {
-    level: "error",                 // 报错等级。可以是 "error" 或 "warning"。
+    level: "default",               // 报错等级。可以是 "default"、"error" 或 "warning"。
     configuration: "tslint.json",   // 规则文件。详见 https://palantir.github.io/tslint/usage/configuration/
     program: null,                  // 如果需要启动类型检查，则指定 tsconfig.json 路径或 ts.Program 对象。
     rulesDirectory: null,           // 规则文件夹。

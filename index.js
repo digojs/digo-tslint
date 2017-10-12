@@ -9,10 +9,7 @@ module.exports = function TSLint(file, options) {
     } else {
         configuration = tslint.Configuration.parseConfigFile(configuration, options.cwd);
     }
-    var program = options.program;
-    if (program == null) {
-        program = tslint.Linter.findConfigurationPath("tsconfig.json");
-    }
+    var program = options.program || (require("digo").existsFile("tsconfig.json") ? "tsconfig.json" : undefined);
     if (typeof program === "string") {
         const key = (options.cwd || "") + "/" + program;
         program = programs[key] || (programs[key] = tslint.Linter.createProgram(program, options.cwd));
@@ -39,7 +36,7 @@ module.exports = function TSLint(file, options) {
             endLine: endLoc.line,
             endColumn: endLoc.character
         };
-        if (options.level === "warning" || failure.getRuleSeverity() === "warning") {
+        if (options.level === "warning" || options.level !== "error" && failure.getRuleSeverity() === "warning") {
             file.warning(e);
         } else {
             file.error(e);
